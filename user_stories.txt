@@ -1,0 +1,3 @@
+ As a user I can see one haunted house's monsters
+ As a user I can add a monser to a haunted house
+ As a user I can kill a monster
