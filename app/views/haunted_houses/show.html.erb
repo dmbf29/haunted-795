@@ -1,0 +1,13 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @haunted_house.banner_url %>);">
+  <div class="container">
+    <h1><%= @haunted_house.name %></h1>
+    <%= link_to 'Add Monster', new_haunted_house_monster_path(@haunted_house), class: 'btn btn-danger mt-2' %>
+  </div>
+</div>
+<div class="container">
+  <div class="cards mt-4">
+    <% @haunted_house.monsters.each do |monster| %>
+      <%= render 'monsters/card', monster: monster %>
+    <% end %>
+  </div>
+</div>

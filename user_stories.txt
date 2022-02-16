@@ -1,3 +1,9 @@
- As a user I can see one haunted house's monsters
- As a user I can add a monser to a haunted house
- As a user I can kill a monster
+As a user I can see one haunted house's monsters
+/haunted_houses/:id (show)
+
+As a user I can add a monster to a haunted house
+/haunted_houses/:haunted_house_id/monsters/new (new form)
+/haunted_houses/:haunted_house_id/monsters (create)
+
+As a user I can kill a monster
+monsters/:id (destroy)

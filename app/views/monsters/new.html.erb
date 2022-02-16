@@ -1,0 +1,8 @@
+<div class="container mt-5">
+  <h1>Spawn Monster</h1>
+  <%= simple_form_for [@haunted_house, @monster] do |f| %>
+    <%= f.input :name, input_html: { placeholder: 'Monster name'} %>
+    <%= f.input :image_url, input_html: { placeholder: 'www......'} %>
+    <%= f.submit 'Spawn', class: 'btn btn-danger mt-3' %>
+  <% end %>
+</div>
