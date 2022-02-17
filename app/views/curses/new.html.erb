@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Curse <%= @monster.name %></h1>
+  <%= simple_form_for [@monster, @curse] do |f| %>
+    <%= f.association :power, include_blank: false, collection: @powers %>
+    <%# , input_html: { multiple: true } %>
+    <%= f.submit 'Curse', class: 'btn btn-danger mt-3' %>
+  <% end %>
+</div>

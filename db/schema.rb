@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_16_081108) do
+ActiveRecord::Schema.define(version: 2022_02_17_081222) do
+
+  create_table "curses", force: :cascade do |t|
+    t.integer "monster_id", null: false
+    t.integer "power_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["monster_id"], name: "index_curses_on_monster_id"
+    t.index ["power_id"], name: "index_curses_on_power_id"
+  end
 
   create_table "haunted_houses", force: :cascade do |t|
     t.string "name"
@@ -28,5 +37,13 @@ ActiveRecord::Schema.define(version: 2022_02_16_081108) do
     t.index ["haunted_house_id"], name: "index_monsters_on_haunted_house_id"
   end
 
+  create_table "powers", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "curses", "monsters"
+  add_foreign_key "curses", "powers"
   add_foreign_key "monsters", "haunted_houses"
 end

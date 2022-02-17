@@ -33,3 +33,14 @@ Monster.create!(
 )
 
 puts "... created #{HauntedHouse.count} haunted houses."
+
+puts "Removing powers...."
+Power.destroy_all
+
+puts "Creating powers..."
+15.times do
+  Power.create!(
+    name: Faker::Superhero.unique.power
+  )
+end
+puts "... created #{Power.count} powers."
