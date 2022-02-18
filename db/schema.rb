@@ -12,9 +12,12 @@
 
 ActiveRecord::Schema.define(version: 2022_02_17_081222) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "curses", force: :cascade do |t|
-    t.integer "monster_id", null: false
-    t.integer "power_id", null: false
+    t.bigint "monster_id", null: false
+    t.bigint "power_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["monster_id"], name: "index_curses_on_monster_id"
@@ -31,7 +34,7 @@ ActiveRecord::Schema.define(version: 2022_02_17_081222) do
   create_table "monsters", force: :cascade do |t|
     t.string "name"
     t.string "image_url"
-    t.integer "haunted_house_id", null: false
+    t.bigint "haunted_house_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["haunted_house_id"], name: "index_monsters_on_haunted_house_id"
