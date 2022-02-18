@@ -1,4 +1,4 @@
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= monster.image_url %>)">
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= monster.photo.attached? ? cl_image_path(monster.photo.key) : monster.image_url %>)">
   <%= monster.name %>
   <%= link_to monster_path(monster), method: :delete, class: 'card-remove-link', data: { confirm: "Slay #{monster.name}?"} do %>
     <i class="fas fa-cross"></i>
