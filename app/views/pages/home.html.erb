@@ -1,0 +1,6 @@
+<div class="container">
+  <h1>Welcome to our Haunted Houses</h1>
+  <% @haunted_houses.each do |haunted_house| %>
+    <%= link_to haunted_house.name, haunted_house_path(haunted_house)  %>
+  <% end %>
+</div>

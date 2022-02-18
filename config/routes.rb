@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: 'pages#home'
   resources :haunted_houses, only: [:show] do
     resources :monsters, only: [:new, :create]
   end
